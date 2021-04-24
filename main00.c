@@ -5,6 +5,15 @@
 
 int choose;
 
+void print_list(void)
+{
+    struct node*temp=start;
+    while(temp!=NULL)
+    {
+        printf("%S    %d     %s       %d    ",temp->std_name, temp->std_id,temp->std_date_bith,temp->std_score);
+        temp=temp->next;
+    }
+}
 int main()
 {printf("enter the name of student , id ,date of birth and score respectivately \n ");
     char name[30];
