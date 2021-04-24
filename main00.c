@@ -3,6 +3,23 @@
 #include <string.h>
 #define NULL ( (void *) 0)
 
+void append_node(struct node*element)
+{
+    if((start==NULL)&&(end==NULL))
+    {
+        start=element;
+        end=element;
+        element->next=NULL;
+    }
+    else
+    {
+        end->next=element;
+        end=element;
+        element->next=NULL;
+    }
+
+}
+
 void insert_node(struct node*element)
 {
     struct node*temp;
@@ -33,15 +50,7 @@ default :
 
 int choose;
 
-void print_list(void)
-{
-    struct node*temp=start;
-    while(temp!=NULL)
-    {
-        printf("%S    %d     %s       %d    ",temp->std_name, temp->std_id,temp->std_date_bith,temp->std_score);
-        temp=temp->next;
-    }
-}
+
 int main()
 {printf("enter the name of student , id ,date of birth and score respectivately \n ");
     char name[30];
